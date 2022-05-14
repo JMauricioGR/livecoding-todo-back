@@ -27,47 +27,47 @@ public class Controller {
     @Autowired
     private CategoryTagService categoryTagService;
 
-    @GetMapping("get/all/categories")
+    @GetMapping("get/all/categories") //Tested
     public List<CategoryDto> getAllCategories(){
         return categoryService.findAllCategories();
     }
 
-    @PostMapping("save/category")
+    @PostMapping("save/category") //Tested
     public CategoryDto saveCategory(@RequestBody CategoryDto categoryDto){
         return categoryService.createCategory(categoryDto);
     }
 
-    @PostMapping("save/note")
+    @PostMapping("save/note") //Tested
     public NoteDto saveNote(@RequestBody NoteDto note){
         return noteService.createNote(note);
     }
 
-    @PostMapping("save/categorytag")
+    @PostMapping("save/categorytag") //Tested
     public CategoryTagDto saveCategoryTag(@RequestBody CategoryTagDto categoryTagDto){
         return categoryTagService.createCategoryTag(categoryTagDto);
     }
 
-    @PutMapping("update/note")
+    @PutMapping("update/note") //Tested
     public NoteDto updateNote(@RequestBody NoteDto noteDto){
         return noteService.updateNote(noteDto);
     }
 
-    @PutMapping("update/categorytag")
+    @PutMapping("update/categorytag") //Tested
     public CategoryTagDto updateCategoryTag(@RequestBody CategoryTagDto categoryTagDto){
         return categoryTagService.updateCategoryTag(categoryTagDto);
     }
 
-    @DeleteMapping("delete/category/{id}")
+    @DeleteMapping("delete/category/{id}") //Tested
     public void deleteCategory(@PathVariable Long id){
         categoryService.deleteCategory(id);
     }
 
-    @DeleteMapping("delete/note/{id}")
+    @DeleteMapping("delete/note/{id}") //Tested
     public void deleteNote(@PathVariable Long id){
         noteService.deleteNote(id);
     }
 
-    @DeleteMapping("delete/categorytag/{id}")
+    @DeleteMapping("delete/categorytag/{id}") //Tested
     public void deleteCategoryTag(@PathVariable Long id){
         categoryTagService.deleteCategoryTag(id);
     }

@@ -2,8 +2,10 @@ package com.sofkau.todo.todoapp.service;
 
 import com.sofkau.todo.todoapp.dto.CategoryDto;
 import com.sofkau.todo.todoapp.dto.Mapper;
+import com.sofkau.todo.todoapp.entity.CategoryTag;
 import com.sofkau.todo.todoapp.entity.Note;
 import com.sofkau.todo.todoapp.repository.CategoryRepository;
+import com.sofkau.todo.todoapp.repository.CategoryTagRepository;
 import com.sofkau.todo.todoapp.repository.NoteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
