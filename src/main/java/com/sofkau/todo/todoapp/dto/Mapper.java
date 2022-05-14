@@ -1,6 +1,7 @@
 package com.sofkau.todo.todoapp.dto;
 
 import com.sofkau.todo.todoapp.entity.Category;
+import com.sofkau.todo.todoapp.entity.CategoryTag;
 import com.sofkau.todo.todoapp.entity.Note;
 import org.springframework.stereotype.Component;
 
@@ -16,6 +17,11 @@ public class Mapper {
         note.setDone(noteDto.isDone());
         note.setMessage(noteDto.getMessage());
         note.setId(noteDto.getId());
+        List<CategoryTag> categoryTags = new ArrayList<>();
+        if(noteDto.getCategoryTagDto().size() > 0){
+            noteDto.getCategoryTagDto().forEach(categoryTagDto -> categoryTags.add(this.fromCategoryTagDtoToEntity(categoryTagDto)));
+            note.setCategoryTags(categoryTags);
+        }
         return note;
     }
 
@@ -25,6 +31,9 @@ public class Mapper {
         noteDto.setDone(note.isDone());
         noteDto.setMessage(note.getMessage());
         noteDto.setId(note.getId());
+        List<CategoryTagDto> categoryTagDtos = new ArrayList<>();
+        note.getCategoryTags().forEach(categoryTag -> categoryTagDtos.add(this.fromEntityToCategoruTagDto(categoryTag)));
+        noteDto.setCategoryTagDto(categoryTagDtos);
         return noteDto;
     }
 
@@ -48,5 +57,21 @@ public class Mapper {
         categoryDto.setTitle(category.getTitle());
         categoryDto.setNotes(notes);
         return categoryDto;
+    }
+
+    public CategoryTag fromCategoryTagDtoToEntity(CategoryTagDto categoryTagDto){
+        CategoryTag categoryTag = new CategoryTag();
+        categoryTag.setId(categoryTagDto.getId());
+        categoryTag.setCategoryTag(categoryTagDto.getCategoryTag());
+        categoryTag.setNoteId(categoryTagDto.getNoteId());
+        return categoryTag;
+    }
+
+    public CategoryTagDto fromEntityToCategoruTagDto(CategoryTag categoryTag){
+        CategoryTagDto categoryTagDto = new CategoryTagDto();
+        categoryTagDto.setCategoryTag(categoryTag.getCategoryTag());
+        categoryTagDto.setId(categoryTag.getId());
+        categoryTagDto.setNoteId(categoryTagDto.getId());
+        return categoryTagDto;
     }
 }
