@@ -1,0 +1,23 @@
+[33mcommit abf688a5972b24750b24ae5d9668071b59d14da6[m[33m ([m[1;36mHEAD -> [m[1;32mJehisonCode[m[33m, [m[1;31morigin/JehisonCode[m[33m)[m
+Author: Jehison Galarza <jehisonsc045@gmail.com>
+Date:   Sat May 14 03:53:42 2022 -0500
+
+    Backend ToDoAppTags --- Controller updated for delete tags when a note is delete, all methods tested
+
+[33mcommit cfdf037c2d5dfff102663043a244a9f7747a9735[m
+Author: Jehison Galarza <jehisonsc045@gmail.com>
+Date:   Sat May 14 02:48:00 2022 -0500
+
+    Backend ToDoAppTags --- CategoryTag service iterface and implementation created, controller updated with post, put and delete methods for categorytags
+
+[33mcommit 7490794412c0cd7f8e8efd24ec5aedba12178b2c[m
+Author: Jehison Galarza <jehisonsc045@gmail.com>
+Date:   Sat May 14 00:50:57 2022 -0500
+
+    Backend ToDoAppTags --- CategoryTag entity, repository, DTO and mapper created
+
+[33mcommit 5e12cc678616eb6a77328d2877f777af406a1570[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m
+Author: santiagoposadag <santiago90dell@gmail.com>
+Date:   Wed May 11 19:23:00 2022 -0500
+
+    backend finished
