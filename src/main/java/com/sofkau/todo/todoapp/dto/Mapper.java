@@ -31,9 +31,9 @@ public class Mapper {
         noteDto.setDone(note.isDone());
         noteDto.setMessage(note.getMessage());
         noteDto.setId(note.getId());
-        List<CategoryTagDto> categoryTagDtos = new ArrayList<>();
-        note.getCategoryTags().forEach(categoryTag -> categoryTagDtos.add(this.fromEntityToCategoruTagDto(categoryTag)));
-        noteDto.setCategoryTagDto(categoryTagDtos);
+        List<CategoryTagDto> categoryTagDto = new ArrayList<>();
+        note.getCategoryTags().forEach(categoryTag -> categoryTagDto.add(this.fromEntityToCategoryTagDto(categoryTag)));
+        noteDto.setCategoryTagDto(categoryTagDto);
         return noteDto;
     }
 
@@ -67,11 +67,11 @@ public class Mapper {
         return categoryTag;
     }
 
-    public CategoryTagDto fromEntityToCategoruTagDto(CategoryTag categoryTag){
+    public CategoryTagDto fromEntityToCategoryTagDto(CategoryTag categoryTag){
         CategoryTagDto categoryTagDto = new CategoryTagDto();
         categoryTagDto.setCategoryTag(categoryTag.getCategoryTag());
         categoryTagDto.setId(categoryTag.getId());
-        categoryTagDto.setNoteId(categoryTagDto.getId());
+        categoryTagDto.setNoteId(categoryTag.getNoteId());
         return categoryTagDto;
     }
 }

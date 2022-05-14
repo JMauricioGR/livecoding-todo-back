@@ -1,6 +1,5 @@
 package com.sofkau.todo.todoapp.entity;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 
 import javax.persistence.*;

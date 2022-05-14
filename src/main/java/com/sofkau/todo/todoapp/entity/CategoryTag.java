@@ -1,7 +1,6 @@
 package com.sofkau.todo.todoapp.entity;
 
 import lombok.Data;
-
 import javax.persistence.*;
 
 @Entity(name = "CategoryTag")
